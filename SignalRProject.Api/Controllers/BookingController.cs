@@ -65,6 +65,7 @@ namespace SignalRProject.Api.Controllers
             var value = _bookingService.GetById(id);
             return Ok(value);
         }
+
         //[HttpGet("BookingStatusApproved/{id}")]
         //public IActionResult BookingStatusApproved(int id)
         //{

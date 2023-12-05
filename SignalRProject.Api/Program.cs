@@ -3,10 +3,12 @@ using SignalRProject.BusinessLayer.Concrete;
 using SignalRProject.DataAccessLayer.Abstract;
 using SignalRProject.DataAccessLayer.Concrete;
 using SignalRProject.DataAccessLayer.EntityFramework;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<SignalRContext>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddScoped<IAboutService, AboutManager>();
 builder.Services.AddScoped<IAboutDal,EfAboutDal>();

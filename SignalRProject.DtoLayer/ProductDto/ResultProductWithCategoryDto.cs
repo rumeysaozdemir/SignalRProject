@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalRProject.EntityLayer.Entities
+namespace SignalRProject.DtoLayer.ProductDto
 {
-    public class Product
+    public class ResultProductWithCategoryDto
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
@@ -14,7 +14,6 @@ namespace SignalRProject.EntityLayer.Entities
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public bool ProductStatus { get; set; }
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public string CategoryName { get; set; }
     }
 }

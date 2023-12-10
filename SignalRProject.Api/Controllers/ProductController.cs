@@ -57,6 +57,7 @@ namespace SignalRProject.Api.Controllers
                 Price = createProductDto.Price,
                 ProductName = createProductDto.ProductName,
                 ProductStatus = createProductDto.ProductStatus,
+                CategoryId = createProductDto.CategoryId
 
             });
             return Ok("Ürün Bilgisi Eklendi");
@@ -84,7 +85,8 @@ namespace SignalRProject.Api.Controllers
                 Description = updateProductDto.Description,
                 ImageUrl = updateProductDto.ImageUrl,
                 Price = updateProductDto.Price,
-                ProductId = updateProductDto.ProductId
+                ProductId = updateProductDto.ProductId,
+                CategoryId = updateProductDto.CategoryId
 
             });
             return Ok("Ürün Bilgisi Güncellendi");

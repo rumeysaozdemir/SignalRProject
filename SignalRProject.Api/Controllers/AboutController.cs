@@ -37,7 +37,7 @@ namespace SignalRProject.Api.Controllers
             return Ok("Hakkımda Kısmı Başarılı bir Şekilde Eklendi.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
         public IActionResult DeleteAbout(int id)
         {
@@ -60,7 +60,7 @@ namespace SignalRProject.Api.Controllers
             _aboutService.Update(about);
             return Ok("Hakkımda Alanı Güncellendi");
         }
-        [HttpGet("GetAbout")]
+        [HttpGet("{id}")]
 
         public IActionResult GetAbout(int id)
         {

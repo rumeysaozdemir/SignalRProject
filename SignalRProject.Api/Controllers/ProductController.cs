@@ -29,6 +29,24 @@ namespace SignalRProject.Api.Controllers
             return Ok(value);
         }
 
+        [HttpGet("ProductCount")]
+        public IActionResult ProductCount()
+        {
+            return Ok(_productService.ProductCount());
+        }
+
+        [HttpGet("ProductCountByDrink")]
+        public IActionResult ProductCountByDrink()
+        {
+            return Ok(_productService.ProductCountByCategoryNameDrink());
+        }
+
+        [HttpGet("ProductCountByHamburger")]
+        public IActionResult ProductCountByHamburger()
+        {
+            return Ok(_productService.ProductCountByCategoryNameHamburger());
+        }
+
         [HttpGet("ProductListWithCategory")]
         public IActionResult ProductLİstWithCategory() 
         {

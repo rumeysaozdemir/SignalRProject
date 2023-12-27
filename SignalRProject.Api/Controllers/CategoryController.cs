@@ -24,7 +24,27 @@ namespace SignalRProject.Api.Controllers
             var value = _mapper.Map<List<ResultCategoryDto>>(_categoryService.GetListAll());
             return Ok(value);
         }
-                        
+
+        [HttpGet("CategoryCount")]
+        public IActionResult CategoryCount()
+        {
+            return Ok(_categoryService.CategoryCount());
+        }
+
+
+        [HttpGet("ActiveCategoryCount")]
+        public IActionResult ActiveCategoryCount()
+        {
+            return Ok(_categoryService.ActiveCategoryCount());
+        }
+
+
+        [HttpGet("PassiveCategoryCount")]
+        public IActionResult PassiveCategoryCount()
+        {
+            return Ok(_categoryService.PassiveCategoryCount());
+        }
+
         [HttpPost]
         public IActionResult CreateCategory(CreateCategoryDto createCategoryDto)
         {

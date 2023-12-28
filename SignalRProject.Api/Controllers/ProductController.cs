@@ -47,6 +47,30 @@ namespace SignalRProject.Api.Controllers
             return Ok(_productService.ProductCountByCategoryNameHamburger());
         }
 
+        [HttpGet("ProductPriceAvg")]
+        public IActionResult ProductPriceAvg()
+        {
+            return Ok(_productService.ProductPriceAvg());
+        }
+
+        [HttpGet("ProductNameByMaxPrice")]
+        public IActionResult ProductNameByMaxPrice()
+        {
+            return Ok(_productService.ProductNameByMaxPrice());
+        }
+
+        [HttpGet("ProductNameByMinPrice")]
+        public IActionResult ProductNameByMinPrice()
+        {
+            return Ok(_productService.ProductNameByMinPrice());
+        }
+
+        [HttpGet("ProductAvgPriceByHamburger")]
+        public IActionResult ProductAvgPriceByHamburger()
+        {
+            return Ok(_productService.ProductAvgPriceByHamburger());
+        }
+
         [HttpGet("ProductListWithCategory")]
         public IActionResult ProductLİstWithCategory() 
         {

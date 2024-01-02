@@ -8,37 +8,38 @@
 <script src="~/js/site.js" asp-append-version="true"></script>
 <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
 
-                <script type="text/javascript">
+                    <script type="text/javascript">
 
-                    $(document).ready(() => {
+                        $(document).ready(() => {
 
-                        var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7296/SignalRHub").build();
-                        $("#connstatus").text(connection.state);
-                        connection.start().then(() => {
+                            var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7296/SignalRHub").build();
                             $("#connstatus").text(connection.state);
-                            setInterval(() => {
-                                connection.invoke("SendCategoryCount");
-                            }, 1000);
+                            connection.start().then(() => {
+                                $("#connstatus").text(connection.state);
+                                setInterval(() => {
+                                    connection.invoke("SendCategoryCount");
+                                }, 1000);
 
-                        }).catch((err) => { console.log(err) });
+                            }).catch((err) => { console.log(err) });
 
-                        connection.on("ReceiveCategoryCount", (value) => {
-                            $("#categorycount").text(value);
+                            connection.on("ReceiveCategoryCount", (value) => {
+                                $("#categorycount").text(value);
+                            });
+
                         });
 
-                    });
+                    </script>
 
-                </script>
-
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <div class="row">
@@ -47,7 +48,3 @@
         <div class="alert alert-info">Kategori Sayısı:<strong id="categorycount"></strong></div>
     </div>
 </div>
-
-
-
-
